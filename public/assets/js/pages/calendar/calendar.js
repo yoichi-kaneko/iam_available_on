@@ -45,12 +45,14 @@ function parseCalendarEvents(schedules)
 {
     let event_data = [];
     $.each(schedules,function(index, val){
+        let colorClass = SCHEDULE_STATUS[val.status].className;
+        let mark = SCHEDULE_STATUS[val.status].mark;
         event_data.push(
             {
                 id: val.id,
-                title: val.description,
+                title: mark + ' ' + val.description,
                 start: val.date,
-                className: 'b-l b-2x b-greensea',
+                className: 'b-l b-2x ' + colorClass,
             }
         )
     });

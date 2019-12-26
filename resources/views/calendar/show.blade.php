@@ -555,6 +555,7 @@
 {{Html::script('assets/bundles/fullcalendarscripts.bundle.js')}} <!--/ calender javascripts -->
 
 {{Html::script('assets/bundles/mainscripts.bundle.js')}}<!-- Custom Js -->
+{{Html::script('assets/js/const.js')}}
 {{Html::script('assets/js/pages/calendar/calendar.js')}}
 </body>
 </html>
