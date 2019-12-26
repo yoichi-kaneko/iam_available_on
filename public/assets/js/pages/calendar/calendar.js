@@ -12,7 +12,6 @@ $.ajax({
 
 function renderCalendar(returned_data)
 {
-    console.log(returned_data.date_range.start);
     let events_data = parseCalendarEvents(returned_data.schedules);
     $('#calendar').fullCalendar({
         header: {
@@ -32,15 +31,10 @@ function renderCalendar(returned_data)
         events: events_data,
         dayRender: function (date, cell) {
             let formatted_date = $.fullCalendar.formatDate(date,'YYYY-MM-DD');
-            if(formatted_date == '2019-05-07') {
+            if(returned_data.holidays.indexOf(formatted_date) >= 0) {
                 cell.addClass('fc-holiday');
             }
         },
-//            viewRender: function(event, element) {
-//            console.log(event, element);
-//                $('.fc-day[data-date=2019-05-06]').addClass('fc-hol');
-//                $('.fc-day[data-date=2019-06-07]').addClass('fc-hol');
-//        },
         eventClick: function(info) {
             console.log(info.id);
         }

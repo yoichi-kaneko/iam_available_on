@@ -2,7 +2,7 @@
 
 namespace App\Queries;
 
-use App\Models\HousingOptimalValue;
+use App\Queries\HolidayQuery;
 
 class CalendarDataQuery
 {
@@ -16,7 +16,7 @@ class CalendarDataQuery
         $date_range = self::getDateRange();
         $calendar_data = [
             'date_range' => $date_range,
-            'holidays' => [], // TODO: 祝日取得アルゴリズムを作成する
+            'holidays' => HolidayQuery::get(),
             'schedules' => self::makeScheduleData($date_range)
         ];
 
