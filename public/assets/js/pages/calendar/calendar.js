@@ -6,10 +6,10 @@
             right: 'next'
         },
         locale: 'ja',
-        defaultDate: '2018-12-12',
+        defaultDate: '2019-05-01',
         validRange: {
-            start: '2018-12-10',
-            end: '2019-01-31'
+            start: '2018-12-01',
+            end: '2019-06-30'
         },
         editable: false,
         droppable: false, // this allows things to be dropped onto the calendar
@@ -91,6 +91,17 @@
                 className: 'b-l b-2x b-greensea'
             }
         ],
+        dayRender: function (date, cell) {
+            let formatted_date = $.fullCalendar.formatDate(date,'YYYY-MM-DD');
+            if(formatted_date == '2019-05-07') {
+                cell.addClass('fc-holiday');
+            }
+        },
+//            viewRender: function(event, element) {
+//            console.log(event, element);
+//                $('.fc-day[data-date=2019-05-06]').addClass('fc-hol');
+//                $('.fc-day[data-date=2019-06-07]').addClass('fc-hol');
+//        },
         eventClick: function(info) {
             console.log(info.id);
         }
