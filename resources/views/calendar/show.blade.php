@@ -545,6 +545,9 @@
         </div>
     </div>
 </section>
+<script>
+    const USER_CODE = '{{ $user_code }}';
+</script>
 <!-- Jquery Core Js -->
 {{Html::script('assets/bundles/libscripts.bundle.js')}} <!-- Lib Scripts Plugin Js -->
 {{Html::script('assets/bundles/vendorscripts.bundle.js')}} <!-- Lib Scripts Plugin Js -->

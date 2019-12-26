@@ -11,6 +11,6 @@ class CalendarController extends BaseController
 {
     public function show($user_code)
     {
-        return view('calendar/show');
+        return view('calendar/show')->with(['user_code' => $user_code]);
     }
 }

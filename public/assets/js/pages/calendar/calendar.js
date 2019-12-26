@@ -1,4 +1,19 @@
 "use strict";
+
+$.ajax({
+    type: 'GET',
+    url: '/api/calendar/' + USER_CODE,
+    format: 'json',
+    success: function (returned_data) {
+        renderCalendar(returned_data);
+        bindCalendarEvents();
+    },
+});
+
+function renderCalendar(returned_data)
+{
+    console.log(returned_data.date_range.start);
+    let events_data = parseCalendarEvents(returned_data.schedules);
     $('#calendar').fullCalendar({
         header: {
             left: 'prev',
@@ -6,91 +21,15 @@
             right: 'next'
         },
         locale: 'ja',
-        defaultDate: '2019-05-01',
+        defaultDate: returned_data.date_range.start,
         validRange: {
-            start: '2018-12-01',
-            end: '2019-06-30'
+            start: returned_data.date_range.start,
+            end: returned_data.date_range.end
         },
         editable: false,
         droppable: false, // this allows things to be dropped onto the calendar
-        drop: function() {
-            // is the "remove after drop" checkbox checked?
-            if ($('#drop-remove').is(':checked')) {
-                // if so, remove the element from the "Draggable Events" list
-                $(this).remove();
-            }
-        },
         eventLimit: true, // allow "more" link when too many events
-        events: [
-            {
-                title: 'All Day Event',
-                start: '2018-11-01',
-                className: 'b-l b-2x b-greensea'
-            },
-            {
-                title: 'Long Event',
-                start: '2018-12-07',
-                end: '2018-12-10',
-                className: 'bg-cyan'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2018-12-09T16:00:00',
-                className: 'b-l b-2x b-lightred'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2018-12-16T16:00:00',
-                className: 'b-l b-2x b-success'
-            },
-            {
-                id: 'Conf',
-                title: 'Conference',
-                start: '2018-12-11',
-                end: '2018-12-13',
-                className: 'b-l b-2x b-primary'
-            },
-            {
-                title: 'Meeting',
-                start: '2018-12-12T10:30:00',
-                end: '2018-12-12T12:30:00',
-                className: 'b-l b-2x b-amethyst'
-            },
-            {
-                title: 'Lunch',
-                start: '2018-12-12T12:00:00',
-                className: 'b-l b-2x b-primary'
-            },
-            {
-                title: 'Meeting',
-                start: '2018-12-12T14:30:00',
-                className: 'b-l b-2x b-drank'
-            },
-            {
-                title: 'Happy Hour',
-                start: '2018-12-12T17:30:00',
-                className: 'b-l b-2x b-lightred'
-            },
-            {
-                title: 'Dinner',
-                start: '2018-12-12T20:00:00',
-                className: 'b-l b-2x b-amethyst'
-            },
-            {
-                id: 'XXX',
-                title: 'Birthday Party',
-                start: '2018-12-13T07:00:00',
-                className: 'b-l b-2x b-primary'
-            },
-            {
-                title: 'Click for Google',
-                url: 'http://google.com/',
-                start: '2018-12-28',
-                className: 'b-l b-2x b-greensea'
-            }
-        ],
+        events: events_data,
         dayRender: function (date, cell) {
             let formatted_date = $.fullCalendar.formatDate(date,'YYYY-MM-DD');
             if(formatted_date == '2019-05-07') {
@@ -106,12 +45,27 @@
             console.log(info.id);
         }
     });
+}
 
-    // Hide default header
-    //$('.fc-header').hide();
+function parseCalendarEvents(schedules)
+{
+    let event_data = [];
+    $.each(schedules,function(index, val){
+        event_data.push(
+            {
+                id: val.id,
+                title: val.description,
+                start: val.date,
+                className: 'b-l b-2x b-greensea',
+            }
+        )
+    });
 
+    return event_data;
+}
 
-
+function bindCalendarEvents()
+{
     // Previous month action
     $('#cal-prev').click(function(){
         $('#calendar').fullCalendar( 'prev' );
@@ -165,6 +119,9 @@
     $('#change-view-today').click(function(){
         $('#calendar').fullCalendar('today');
     });
+}
+
+
 
     /* initialize the external events
      -----------------------------------------------------------------*/
