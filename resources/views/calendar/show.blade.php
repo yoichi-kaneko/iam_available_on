@@ -13,6 +13,7 @@
     <!-- Custom Css -->
     {{Html::style('assets/css/main.css')}}
     {{Html::style('assets/css/all-themes.css')}}
+    {{Html::style('assets/css/calendar.css')}}
 </head>
 <body class="theme-red">
 <!-- Page Loader -->

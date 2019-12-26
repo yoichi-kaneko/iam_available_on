@@ -5,9 +5,14 @@
             center: 'title',
             right: 'next'
         },
+        locale: 'ja',
         defaultDate: '2018-12-12',
-        editable: true,
-        droppable: true, // this allows things to be dropped onto the calendar
+        validRange: {
+            start: '2018-12-10',
+            end: '2019-01-31'
+        },
+        editable: false,
+        droppable: false, // this allows things to be dropped onto the calendar
         drop: function() {
             // is the "remove after drop" checkbox checked?
             if ($('#drop-remove').is(':checked')) {
@@ -41,6 +46,7 @@
                 className: 'b-l b-2x b-success'
             },
             {
+                id: 'Conf',
                 title: 'Conference',
                 start: '2018-12-11',
                 end: '2018-12-13',
@@ -73,6 +79,7 @@
                 className: 'b-l b-2x b-amethyst'
             },
             {
+                id: 'XXX',
                 title: 'Birthday Party',
                 start: '2018-12-13T07:00:00',
                 className: 'b-l b-2x b-primary'
@@ -83,7 +90,10 @@
                 start: '2018-12-28',
                 className: 'b-l b-2x b-greensea'
             }
-        ]
+        ],
+        eventClick: function(info) {
+            console.log(info.id);
+        }
     });
 
     // Hide default header
