@@ -551,28 +551,25 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="defaultModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="modalLabel"><span id="schedule_date"></span></h4>
             </div>
-            <div class="modal-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan
-                vitae eros sit amet tristique. Nullam scelerisque nunc enim, non dignissim nibh faucibus ullamcorper.
-                Fusce pulvinar libero vel ligula iaculis ullamcorper. Integer dapibus, mi ac tempor varius, purus
-                nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla.
-                Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc.
+            <div class="modal-body">
                 <div class="radio-button">
-                    <input name="group1" type="radio" class="with-gap" id="radio_1">
-                    <label for="radio_1">◯</label>
-                    <input name="group1" type="radio" class="with-gap" id="radio_2">
-                    <label for="radio_2">△</label>
-                    <input name="group1" type="radio" class="with-gap" id="radio_3">
-                    <label for="radio_3">×</label>
+                    <input name="schedule_status" type="radio" class="with-gap radio-col-blue" id="schedule_status_1" value="1">
+                    <label for="schedule_status_1">◯</label>
+                    <input name="schedule_status" type="radio" class="radio-col-yellow with-gap" id="schedule_status_2" value="2">
+                    <label for="schedule_status_2">△</label>
+                    <input name="schedule_status" type="radio" class="radio-col-red with-gap" id="schedule_status_3" value="3">
+                    <label for="schedule_status_3">×</label>
                 </div>
                 <div class="form-group">
                     <div class="form-line">
-                        <input type="text" class="form-control" placeholder="col-sm-3" />
+                        <input id="schedule_comment" type="text" class="form-control" placeholder="16文字まで" />
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
+                <input name="schedule_id" id="schedule_id" type="hidden">
                 <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
                 <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
             </div>

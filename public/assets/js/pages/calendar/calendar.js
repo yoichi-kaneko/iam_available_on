@@ -36,8 +36,7 @@ function renderCalendar(returned_data)
             }
         },
         eventClick: function(info) {
-            console.log(info);
-            $('#modal_button').click();
+            showModal(info);
         }
     });
 }
@@ -52,8 +51,10 @@ function parseCalendarEvents(schedules)
             {
                 id: val.id,
                 comment: val.description,
+                status: val.status,
                 title: mark + ' ' + val.description,
                 start: val.date,
+                date: val.date,
                 className: 'b-l b-2x ' + colorClass,
             }
         )
@@ -119,7 +120,14 @@ function bindCalendarEvents()
     });
 }
 
-
+function showModal(info)
+{
+    $('#schedule_id').val(info.id);
+    $('#schedule_date').html(info.date);
+    $('#schedule_comment').val(info.comment);
+    $('#schedule_status_' + info.status).prop('checked', true);
+    $('#modal_button').click();
+}
 
     /* initialize the external events
      -----------------------------------------------------------------*/
