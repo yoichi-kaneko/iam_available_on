@@ -569,8 +569,18 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <div class="preloader pl-size-xs" id="schedule_loader" style="display: none;">
+                    <div class="spinner-layer pl-grey">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
                 <input name="schedule_id" id="schedule_id" type="hidden">
-                <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
+                <button id="save_schedule" type="button" class="btn btn-link waves-effect">SAVE</button>
                 <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
             </div>
         </div>
@@ -585,9 +595,11 @@
 {{Html::script('assets/bundles/vendorscripts.bundle.js')}} <!-- Lib Scripts Plugin Js -->
 
 {{Html::script('assets/bundles/fullcalendarscripts.bundle.js')}} <!--/ calender javascripts -->
+{{Html::script('assets/plugins/bootstrap-notify/bootstrap-notify.js')}} <!--/ calender javascripts -->
 
 {{Html::script('assets/bundles/mainscripts.bundle.js')}}<!-- Custom Js -->
 {{Html::script('assets/js/const.js')}}
 {{Html::script('assets/js/pages/calendar/calendar.js')}}
+{{Html::script('assets/js/pages/ui/notifications.js')}}
 </body>
 </html>

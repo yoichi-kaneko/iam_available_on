@@ -85,6 +85,24 @@ function bindCalendarEvents()
                 $('#content .main').css({'display':'table'});
             }, 0);
         });
+    });
+
+    $('#save_schedule').click(function(){
+        $('#schedule_loader').show();
+        $.ajax({
+            type: 'GET',
+            url: '/api/calendar/' + USER_CODE,
+            format: 'json',
+            success: function (returned_data) {
+                showNotification('alert-info', 'スケジュールが更新されました', 'bottom', 'left', null, null);
+            },
+            error: function (returned_data) {
+                showNotification('alert-danger', '更新に失敗しました', 'bottom', 'left', null, null);
+            },
+            complete: function (returned_data) {
+                $('#modal_button').click();
+            }
+        });
 
     });
 
@@ -126,6 +144,7 @@ function showModal(info)
     $('#schedule_date').html(info.date);
     $('#schedule_comment').val(info.comment);
     $('#schedule_status_' + info.status).prop('checked', true);
+    $('#schedule_loader').hide();
     $('#modal_button').click();
 }
 
