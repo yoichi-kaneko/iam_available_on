@@ -544,7 +544,42 @@
             </div>
         </div>
     </div>
+    <button type="button" id="modal_button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#defaultModal" style="display: none;">MODAL</button>
 </section>
+
+<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan
+                vitae eros sit amet tristique. Nullam scelerisque nunc enim, non dignissim nibh faucibus ullamcorper.
+                Fusce pulvinar libero vel ligula iaculis ullamcorper. Integer dapibus, mi ac tempor varius, purus
+                nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla.
+                Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc.
+                <div class="radio-button">
+                    <input name="group1" type="radio" class="with-gap" id="radio_1">
+                    <label for="radio_1">◯</label>
+                    <input name="group1" type="radio" class="with-gap" id="radio_2">
+                    <label for="radio_2">△</label>
+                    <input name="group1" type="radio" class="with-gap" id="radio_3">
+                    <label for="radio_3">×</label>
+                </div>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" class="form-control" placeholder="col-sm-3" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     const USER_CODE = '{{ $user_code }}';
 </script>

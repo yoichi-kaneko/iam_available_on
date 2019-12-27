@@ -12,3 +12,28 @@
 .fc-holiday {
     background-color: #fff0f0;
 }
+
+.fc-event-container {
+    cursor: pointer;
+}
+
+.page-calendar .b-yellow {
+    border-color: #ffe77a !important;
+}
+
+.radio-button label {
+    min-width: 50px;
+}
+
+
+html {
+    overflow: scroll;
+}
+
+#defaultModal {
+    overflow: hidden;
+}
+
+.modal-open {
+    padding-right: 0px !important;
+}

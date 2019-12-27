@@ -36,7 +36,8 @@ function renderCalendar(returned_data)
             }
         },
         eventClick: function(info) {
-            console.log(info.id);
+            console.log(info);
+            $('#modal_button').click();
         }
     });
 }
@@ -50,6 +51,7 @@ function parseCalendarEvents(schedules)
         event_data.push(
             {
                 id: val.id,
+                comment: val.description,
                 title: mark + ' ' + val.description,
                 start: val.date,
                 className: 'b-l b-2x ' + colorClass,
