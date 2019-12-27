@@ -95,6 +95,14 @@ function bindCalendarEvents()
             format: 'json',
             success: function (returned_data) {
                 showNotification('alert-info', 'スケジュールが更新されました', 'bottom', 'left', null, null);
+                // TODO: この書き方でイベント更新できるので、これをちゃんと整備する
+                //let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
+                //    console.log(evt, evt.id);
+                //    return evt.id == 23;
+                //});
+                //event[0].title = 'XXX';
+                //$('#calendar').fullCalendar('updateEvent', event[0]);
+                //console.log(event);
             },
             error: function (returned_data) {
                 showNotification('alert-danger', '更新に失敗しました', 'bottom', 'left', null, null);
