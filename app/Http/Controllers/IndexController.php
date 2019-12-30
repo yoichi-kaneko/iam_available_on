@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
-class Controller extends BaseController
+class IndexController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    protected function is_logined()
+    public function index()
     {
-        return Auth::check();
+        return view('index/index')->with(['is_logined' => $this->is_logined()]);
     }
 }

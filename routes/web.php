@@ -15,9 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'IndexController@index');
 Route::get('/calendar/{user_code}', 'CalendarController@show');
 
-
+Route::get('/register', 'RegisterController@index');
+Route::get('/withdraw', 'WithdrawController@index');
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 Route::get('logout', 'Auth\LogoutController@index');
