@@ -32,11 +32,19 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <div class="button-demo">
-                                <a href="{{ action('Auth\LoginController@redirectToGoogle') }}">
-                                    <button type="button" class="btn btn-raised btn-primary waves-effect">Sign in by google</button>
-                                </a>
-                            </div>
+                            @if (!$is_logined)
+                                <div class="button-demo">
+                                    <a href="{{ action('Auth\LoginController@redirectToGoogle') }}">
+                                        <button type="button" class="btn btn-raised btn-primary waves-effect">Sign in by google</button>
+                                    </a>
+                                </div>
+                            @else
+                                <div class="button-demo">
+                                    <a href="{{ action('Auth\LogoutController@index') }}">
+                                        <button type="button" class="btn btn-raised btn-primary waves-effect">Logout</button>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
