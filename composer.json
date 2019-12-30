@@ -12,6 +12,7 @@
         "azuyalabs/yasumi": "^2.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "laravelcollective/html": "^6.0"
     },
