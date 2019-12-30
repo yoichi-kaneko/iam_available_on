@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
@@ -50,7 +51,21 @@ class LoginController extends Controller
         // Google 認証後の処理
         // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
         $gUser = Socialite::driver('google')->stateless()->user();
-        dd($gUser);
-        die;
+        $user = User::where('email', $gUser->email)->first();
+        // 見つからなければ新しくユーザーを作成
+        if ($user == null) {
+            $user = $this->createUserByGoogle($gUser);
+        }
+        // ログイン処理
+        \Auth::login($user, true);
+        return redirect('/');
+    }
+
+    public function createUserByGoogle($gUser)
+    {
+        $user = User::create([
+            'email'    => $gUser->email,
+        ]);
+        return $user;
     }
 }

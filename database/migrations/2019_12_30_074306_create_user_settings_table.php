@@ -16,6 +16,7 @@ class CreateUserSettingsTable extends Migration
         Schema::create('user_settings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->index();
+            $table->string('user_code', 16)->comment('ユーザーコード')->index();
             $table->string('display_name', 16)->comment('表示名');
             $table->integer('weekday_default_status')->comment('平日のデフォルトステータス');
             $table->integer('holiday_default_status')->comment('休日のデフォルトステータス');

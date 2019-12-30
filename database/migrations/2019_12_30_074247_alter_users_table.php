@@ -16,8 +16,8 @@ class AlterUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('name');
             $table->dropColumn('password');
-            $table->dropColumn('remember_token');
             $table->dropUnique('users_email_unique');
+            $table->index('email');
             $table->softDeletes();
         });
     }

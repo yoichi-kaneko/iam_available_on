@@ -17,5 +17,7 @@ Route::get('/', function () {
 
 Route::get('/calendar/{user_code}', 'CalendarController@show');
 
+
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+Route::get('logout', 'Auth\LogoutController@index');
