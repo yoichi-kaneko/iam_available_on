@@ -1,7 +1,7 @@
 ﻿body {
     @include transition(all .5s);
     @extend .font-15;
-    background-color: #f3f7f8;    
+    background-color: #f3f7f8;
     font-family: 'Work Sans', Arial, Tahoma, sans-serif;
     font-weight: $font-weight-400;
 }
@@ -44,14 +44,14 @@ a {
 }
 
 section {
-    &.content {        
+    &.content {
         @include transition(.5s);
         @include border-radius(3px);
-        margin:60px 0px 15px 250px;
+        margin:60px 0px 15px 0px;
         z-index: 9;
         position: relative;
         padding: 0 10px;
-               
+
     }
 }
 
