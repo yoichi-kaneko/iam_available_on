@@ -8,7 +8,7 @@
     <title>:: AdminCC - Bootstrap 4 Dashboard ::</title>
     <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
     <!-- Favicon-->
-{{Html::style('assets/plugins/bootstrap/css/bootstrap.min.css')}}
+{{Html::style('css/libs.css')}}
 {{Html::style('assets/plugins/fullcalendar/fullcalendar.css')}}
 <!-- Custom Css -->
     {{Html::style('css/main.css')}}
@@ -173,7 +173,8 @@
 @yield('content')
 
 <!-- Jquery Core Js -->
-{{Html::script('assets/bundles/libscripts.bundle.js')}} <!-- Lib Scripts Plugin Js -->
+
+{{Html::script('js/libs.js')}} <!-- Lib Scripts Plugin Js -->
 {{Html::script('assets/bundles/vendorscripts.bundle.js')}} <!-- Lib Scripts Plugin Js -->
 
 {{Html::script('assets/bundles/fullcalendarscripts.bundle.js')}} <!--/ calender javascripts -->

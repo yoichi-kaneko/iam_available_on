@@ -1,7 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
+    "/js/libs.js": "/js/libs.js",
     "/css/all-themes.css": "/css/all-themes.css",
+    "/css/libs.css": "/css/libs.css",
     "/css/calendar.css": "/css/calendar.css",
-    "/css/main.css": "/css/main.css",
-    "/css/app.css": "/css/app.css"
+    "/css/main.css": "/css/main.css"
 }
