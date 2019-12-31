@@ -175,7 +175,6 @@
 <!-- Jquery Core Js -->
 
 {{Html::script('js/libs.js')}} <!-- Lib Scripts Plugin Js -->
-{{Html::script('assets/bundles/vendorscripts.bundle.js')}} <!-- Lib Scripts Plugin Js -->
 
 {{Html::script('assets/bundles/fullcalendarscripts.bundle.js')}} <!--/ calender javascripts -->
 {{Html::script('assets/plugins/bootstrap-notify/bootstrap-notify.js')}} <!--/ calender javascripts -->
