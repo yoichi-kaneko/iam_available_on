@@ -1,0 +1,16 @@
+﻿.pager {
+    li {
+        > a {
+            @include border-radius(0);
+            border: none;
+            background-color: transparent;
+            color: $grey-900;
+            font-weight: $font-weight-700;
+        }
+
+        a:focus,
+        a:active {
+            background-color: transparent;
+        }
+    }
+}

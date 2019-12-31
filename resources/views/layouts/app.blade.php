@@ -11,9 +11,9 @@
 {{Html::style('assets/plugins/bootstrap/css/bootstrap.min.css')}}
 {{Html::style('assets/plugins/fullcalendar/fullcalendar.css')}}
 <!-- Custom Css -->
-    {{Html::style('assets/css/main.css')}}
-    {{Html::style('assets/css/all-themes.css')}}
-    {{Html::style('assets/css/calendar.css')}}
+    {{Html::style('css/main.css')}}
+    {{Html::style('css/all-themes.css')}}
+    {{Html::style('css/calendar.css')}}
 </head>
 <body class="theme-blue-grey">
 <!-- Page Loader -->

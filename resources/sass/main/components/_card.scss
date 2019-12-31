@@ -1,0 +1,151 @@
+﻿.card {
+    @include border-radius(3px);
+    @include box-shadow(none);
+    @extend .m-b-30;
+    background: $white;
+    min-height: 50px;    
+    position: relative;    
+    transition: .5s;
+    border: none;    
+    
+    .card-inside-title {
+        @extend .font-15;
+        @extend .m-t-25;
+        @extend .m-b-15;
+        display: block;
+        color: $black;
+
+        small {
+            @extend .font-11;
+            @extend .m-t-5;
+            color: $grey-500;
+            display: block;            
+
+            a {
+                color: $grey-600;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .card-inside-title:first-child {
+        @extend .m-t-0;
+    }
+
+    .bg-red,
+    .bg-pink,
+    .bg-purple,
+    .bg-deep-purple,
+    .bg-indigo,
+    .bg-blue,
+    .bg-light-blue,
+    .bg-cyan,
+    .bg-teal,
+    .bg-green,
+    .bg-light-green,
+    .bg-lime,
+    .bg-yellow,
+    .bg-amber,
+    .bg-orange,
+    .bg-deep-orange,
+    .bg-brown,
+    .bg-grey,
+    .bg-blue-grey,
+    .bg-blush,
+    .bg-black {
+        border-bottom: none !important;
+        color: $white !important;
+
+        h2, small, .material-icons {
+            color: $white !important;
+        }
+
+        .badge {
+            background-color: $white;
+            color: $grey-800;
+        }
+    }
+
+    .header {
+        @include box-shadow(none);
+        @extend .m-b-0;
+        margin: $margin-base;
+        border-radius: $border-radius-base;
+        color: $grey-800;
+        padding:0 0 10px 0;
+        position: relative;
+
+        .header-dropdown {
+            @extend .margin-0;
+            @extend .padding-0;
+            position: absolute;
+            top: -5px;
+            right:5px;
+            list-style: none;
+
+            a{
+                @extend .displayblock;
+                padding:5px 10px;                
+                &::after{
+                    display: none;
+                }
+            }
+
+            .dropdown-menu {
+                padding: 5px;
+                left: auto !important;
+                top: 100% !important;
+                transform: none !important;
+                right: 0;
+
+                li {
+                    display: block !important;
+                }
+            }
+
+            li {
+                display: inline-block;
+            }
+
+            i {
+                @include transition(all .5s);
+                @extend .font-20;
+                color: $grey-500;                
+
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+
+        h2 {
+            @extend .font-16;
+            @extend .margin-0;            
+            font-weight: $font-weight-500;
+            color: $grey-800;
+            text-transform:uppercase;
+
+            small {
+                @extend .m-t-5;
+                @extend .font-12;
+                color: $grey-500;
+                display: block;
+                line-height: 15px;
+                text-transform:capitalize;
+
+                a {
+                    font-weight: $font-weight-700;
+                    color: $grey-600;
+                }
+            }
+        }
+    }
+    .p-15{ padding:15px !important;}
+
+    .body {
+        @extend .font-14;
+        font-weight: $font-weight-400;
+        color: $grey-800;
+        padding: 15px;        
+    }
+}

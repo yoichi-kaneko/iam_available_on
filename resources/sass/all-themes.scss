@@ -1,0 +1,659 @@
+/* theme-red ===================================*/
+
+.theme-red {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background-color: #f34167;
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background-color: #f34167;
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-red .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #f34167;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #f34167;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #f34167;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #f34167 !important;
+    }
+}
+
+/* theme-purple ===================================*/
+
+.theme-purple {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background-color: #9C27B0;
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background-color: #9C27B0;
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-purple .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #9C27B0;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #9C27B0;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #9C27B0;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #9C27B0 !important;
+    }
+}
+
+/* theme-deep-purple ===================================*/
+
+.theme-deep-purple {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background-color: #5c5edc;
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background-color: #5c5edc;
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-deep-purple .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #5c5edc;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #5c5edc;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #5c5edc;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #5c5edc !important;
+    }
+}
+
+/* theme-blue ===================================*/
+
+.theme-blue {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background-color: #2196F3;
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background-color: #2196F3;
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-blue .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #2196F3;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #2196F3;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #2196F3;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #2196F3 !important;
+    }
+}
+
+/* theme-cyan ===================================*/
+
+.theme-cyan {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background-color: #00BCD4;
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background-color: #00BCD4;
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-cyan .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #00BCD4;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #00BCD4;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #00BCD4;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #00BCD4 !important;
+    }
+}
+
+/* theme-blue-grey ===================================*/
+
+.theme-blue-grey {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background-color: #607D8B;
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background-color: #607D8B;
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-blue-grey .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #607D8B;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #607D8B;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #607D8B;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #607D8B !important;
+    }
+}
+
+/* theme-black ===================================*/
+
+.theme-black {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background-color: #000;
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background-color: #000;
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-black .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #000;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #000;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #000;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #000 !important;
+    }
+}
+
+/* theme-green ===================================*/
+
+.theme-green {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background: linear-gradient(45deg, #4CAF50, #55ce5a);
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background: linear-gradient(45deg, #4CAF50, #55ce5a);
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-green .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #4CAF50;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #4CAF50;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #4CAF50;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #4CAF50 !important;
+    }
+}
+
+/* theme-orange ===================================*/
+
+.theme-orange {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background: linear-gradient(45deg, #FF9800, #ffa827);
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background: linear-gradient(45deg, #FF9800, #ffa827);
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-orange .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #FF9800;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #FF9800;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #FF9800;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #FF9800 !important;
+    }
+}
+
+/* theme-blush ===================================*/
+
+.theme-blush {
+    .navbar, .blog-page .blog-post .img-holder .date-box, .profile-page .profile-sub-header .box-list ul li a:hover {
+        background: linear-gradient(45deg, #dd5e89, #f7bb97);
+    }
+
+    .menu > ul > li > ul {
+        &.normal-sub > li a:hover, > li > ul > li a:hover {
+            background: linear-gradient(45deg, #dd5e89, #f7bb97);
+        }
+    }
+
+    .bars {
+        color: #fff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+
+    .nav {
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .open > a {
+            background-color: transparent;
+
+            &:hover, &:focus .theme-blush .sidebar .menu .list li.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .sidebar .menu .list {
+        li.active > :first-child {
+            i, span {
+                color: #dd5e89;
+            }
+        }
+
+        .toggled, .ml-menu {
+            background-color: #f6f6f6;
+            border-left: 3px solid #dd5e89;
+        }
+    }
+
+    .inbox-widget .inbox-inner:hover .inbox-img img {
+        border: 2px solid #dd5e89;
+        transition: all 150ms linear;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-bottom: 1px solid #dd5e89 !important;
+    }
+}
