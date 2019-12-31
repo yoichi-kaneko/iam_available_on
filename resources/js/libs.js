@@ -6,3 +6,4 @@ require('bootstrap/dist/js/bootstrap');
 require('jquery-slimscroll');
 require('node-waves');
 require('bootstrap-select');
+require('bootstrap-notify');

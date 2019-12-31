@@ -177,9 +177,8 @@
 {{Html::script('js/libs.js')}} <!-- Lib Scripts Plugin Js -->
 
 {{Html::script('assets/bundles/fullcalendarscripts.bundle.js')}} <!--/ calender javascripts -->
-{{Html::script('assets/plugins/bootstrap-notify/bootstrap-notify.js')}} <!--/ calender javascripts -->
 
-{{Html::script('assets/bundles/mainscripts.bundle.js')}}<!-- Custom Js -->
+{{Html::script('js/app.js')}}<!-- Custom Js -->
 {{Html::script('assets/js/const.js')}}
 {{Html::script('assets/js/pages/calendar/calendar.js')}}
 {{Html::script('assets/js/pages/ui/notifications.js')}}
