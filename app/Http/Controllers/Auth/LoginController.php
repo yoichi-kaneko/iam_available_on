@@ -54,18 +54,10 @@ class LoginController extends Controller
         // 見つからなければユーザ登録処理に遷移
         if ($user == null) {
             return redirect('/register')->with(['email' => $gUser->email]);
-            // $user = $this->createUserByGoogle($gUser);
         }
         // ログイン処理
         \Auth::login($user, true);
         return redirect('/');
     }
 
-    public function createUserByGoogle($gUser)
-    {
-        $user = User::create([
-            'email'    => $gUser->email,
-        ]);
-        return $user;
-    }
 }

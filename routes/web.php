@@ -18,6 +18,7 @@ Route::get('/calendar/{user_code}', 'CalendarController@show');
 Route::get('/edit', 'EditController@index');
 
 Route::get('/register', 'RegisterController@index');
+Route::post('/register', 'RegisterController@post');
 Route::get('/withdraw', 'WithdrawController@index');
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');

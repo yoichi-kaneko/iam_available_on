@@ -15,6 +15,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="body">
+                            <form action="{{ action('RegisterController@post') }}" method="POST">
                             <h2 class="card-inside-title">メールアドレス（変更不可）</h2>
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -27,7 +28,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" placeholder="16字以内">
+                                        <input name="display_name" type="text" class="form-control" placeholder="16字以内">
                                     </div>
                                 </div>
                             </div>
@@ -53,10 +54,12 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <textarea rows="1" class="form-control no-resize auto-growth" placeholder="200字以内"></textarea>
+                                        <textarea name="description" rows="1" class="form-control no-resize auto-growth" placeholder="200字以内"></textarea>
                                     </div>
                                 </div>
                             </div>
+                            {{ csrf_field() }}
+                                <input type="hidden" name="email" value="{{ $email }}" >
                             <button class="btn btn-raised btn-primary waves-effect" type="submit">登録する</button>
                         </div>
                     </div>

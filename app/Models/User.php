@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function createByEmail($email)
+    {
+        $user = self::create([
+            'email'    => $email,
+        ]);
+        return $user;
+    }
 }
