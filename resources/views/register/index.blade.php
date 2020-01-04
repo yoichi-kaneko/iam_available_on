@@ -37,14 +37,7 @@
                             </h2>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <div class="radio-button">
-                                        <input name="weekday_default_status" type="radio" class="with-gap radio-col-blue" id="weekday_default_status_1" value="1">
-                                        <label for="weekday_default_status_1">◯</label>
-                                        <input name="weekday_default_status" type="radio" class="radio-col-yellow with-gap" id="weekday_default_status_2" value="2">
-                                        <label for="weekday_default_status_2">△</label>
-                                        <input name="weekday_default_status" type="radio" class="radio-col-red with-gap" id="weekday_default_status_3" value="3">
-                                        <label for="weekday_default_status_3">×</label>
-                                    </div>
+                                    @include('form/status',['prefix' => 'weekday_default_'])
                                 </div>
                             </div>
                             <h2 class="card-inside-title">
@@ -53,14 +46,7 @@
                             </h2>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <div class="radio-button">
-                                        <input name="holiday_default_status" type="radio" class="with-gap radio-col-blue" id="holiday_default_status_1" value="1">
-                                        <label for="holiday_default_status_1">◯</label>
-                                        <input name="holiday_default_status" type="radio" class="radio-col-yellow with-gap" id="holiday_default_status_2" value="2">
-                                        <label for="holiday_default_status_2">△</label>
-                                        <input name="holiday_default_status" type="radio" class="radio-col-red with-gap" id="holiday_default_status_3" value="3">
-                                        <label for="holiday_default_status_3">×</label>
-                                    </div>
+                                    @include('form/status',['prefix' => 'holiday_default_'])
                                 </div>
                             </div>
                             <h2 class="card-inside-title">表示テキスト</h2>

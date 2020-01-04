@@ -56,14 +56,7 @@
                     <h4 class="modal-title" id="modalLabel"><span id="schedule_date"></span></h4>
                 </div>
                 <div class="modal-body">
-                    <div class="radio-button">
-                        <input name="schedule_status" type="radio" class="with-gap radio-col-blue" id="schedule_status_1" value="1">
-                        <label for="schedule_status_1">◯</label>
-                        <input name="schedule_status" type="radio" class="radio-col-yellow with-gap" id="schedule_status_2" value="2">
-                        <label for="schedule_status_2">△</label>
-                        <input name="schedule_status" type="radio" class="radio-col-red with-gap" id="schedule_status_3" value="3">
-                        <label for="schedule_status_3">×</label>
-                    </div>
+                    @include('form/status',['prefix' => 'schedule_'])
                     <div class="form-group">
                         <div class="form-line">
                             <input id="schedule_comment" type="text" class="form-control" placeholder="16文字まで" />
