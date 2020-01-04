@@ -49,12 +49,12 @@ class LoginController extends Controller
     public function handleGoogleCallback()
     {
         // Google 認証後の処理
-        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
         $gUser = Socialite::driver('google')->stateless()->user();
         $user = User::where('email', $gUser->email)->first();
-        // 見つからなければ新しくユーザーを作成
+        // 見つからなければユーザ登録処理に遷移
         if ($user == null) {
-            $user = $this->createUserByGoogle($gUser);
+            return redirect('/register')->with(['email' => $gUser->email]);
+            // $user = $this->createUserByGoogle($gUser);
         }
         // ログイン処理
         \Auth::login($user, true);
