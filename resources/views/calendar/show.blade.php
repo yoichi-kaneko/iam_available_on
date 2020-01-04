@@ -93,3 +93,7 @@
         const USER_CODE = '{{ $user_code }}';
     </script>
 @endsection
+
+@section('js_file')
+    {{Html::script('assets/js/pages/calendar/calendar.js')}}
+@endsection
