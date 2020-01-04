@@ -11,6 +11,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('index/index')->with(['is_logined' => $this->is_logined()]);
+        return view('index/index');
     }
 }

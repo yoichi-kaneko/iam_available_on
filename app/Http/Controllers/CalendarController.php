@@ -12,7 +12,6 @@ class CalendarController extends Controller
     {
         return view('calendar/show')->with(
             [
-                'is_logined' => $this->is_logined(),
                 'user_code' => $user_code
             ]
         );

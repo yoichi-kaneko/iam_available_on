@@ -32,7 +32,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                            @if (!$is_logined)
+                            @if (!Auth::check())
                                 <div class="button-demo">
                                     <a href="{{ action('Auth\LoginController@redirectToGoogle') }}">
                                         <button type="button" class="btn btn-raised btn-primary waves-effect">Sign in by google</button>

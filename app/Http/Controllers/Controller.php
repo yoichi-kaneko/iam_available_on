@@ -12,8 +12,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected function is_logined()
+    public function __construct()
     {
-        return Auth::check();
+        $this->middleware('check_login');
     }
 }
