@@ -15,6 +15,14 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="body">
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert bg-pink alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        {{ $error }}
+                                    </div>
+                                @endforeach
+                            @endif
                             <form action="{{ action('RegisterController@post') }}" method="POST">
                             <h2 class="card-inside-title">メールアドレス（変更不可）</h2>
                             <div class="col-sm-6">

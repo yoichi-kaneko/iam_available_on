@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class UserSetting extends Model
 {
