@@ -9,10 +9,6 @@
 @import 'inc/mixins';
 @import 'inc/variables';
 
-// plugins
-@import 'plugins/waves';
-@import 'plugins/animate';
-
 // Sections
 @import 'components/navbar';
 @import 'components/pageloader.scss';
@@ -61,13 +57,6 @@
 @import 'components/jquerynestable.scss';
 @import 'components/searchresults.scss';
 @import 'components/calendar.scss';
-
-
-@import 'pages/widget.scss';
-@import 'pages/profile.scss';
-@import 'pages/mail.scss';
-@import 'pages/chat.scss';
-@import 'pages/floating-btn.scss';
 
 @import 'components/maps.scss';
 @import 'components/charts.scss';
