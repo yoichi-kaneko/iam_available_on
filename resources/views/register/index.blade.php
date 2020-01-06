@@ -62,7 +62,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <textarea name="description" rows="1" class="form-control no-resize auto-growth" placeholder="200字以内">{{ $input_data['description'] }}</textarea>
+                                        <textarea name="description" rows="1" class="form-control no-resize auto-growth" placeholder="128字以内">{{ $input_data['description'] }}</textarea>
                                     </div>
                                 </div>
                             </div>

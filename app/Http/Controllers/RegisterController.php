@@ -41,12 +41,11 @@ class RegisterController extends Controller
         if(!User::checkEmail($post_data['email'], $post_data['encrypted'])) {
             abort('500');
         }
-        $this->validate($request, UserSetting::getValidateRule());
 
         $user = User::createByEmail($post_data['email']);
-        UserSetting::createSetting($user->id, $post_data);
+        $setting = UserSetting::createSetting($user->id, $post_data);
         \Auth::login($user, true);
-        return redirect('/');
+        return redirect('/calendar/' . $setting->user_code);
     }
 
 }

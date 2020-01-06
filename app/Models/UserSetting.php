@@ -45,7 +45,7 @@ class UserSetting extends Model
             ],
             $settings
         );
-        self::create($data);
+        return self::create($data);
     }
 
     private static function makeUniqueUserCode()

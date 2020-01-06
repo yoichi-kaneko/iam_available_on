@@ -20,7 +20,7 @@ class CreateUserSettingsTable extends Migration
             $table->string('display_name', 16)->comment('表示名');
             $table->integer('weekday_default_status')->comment('平日のデフォルトステータス');
             $table->integer('holiday_default_status')->comment('休日のデフォルトステータス');
-            $table->string('description', 128)->comment('説明文');
+            $table->string('description', 128)->nullable()->comment('説明文');
             $table->timestamps();
             $table->softDeletes();
         });
