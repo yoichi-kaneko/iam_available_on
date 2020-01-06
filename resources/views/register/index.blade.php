@@ -20,7 +20,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="form-line disabled">
-                                        <input type="text" class="form-control" placeholder="{{ $email }}" disabled="">
+                                        <input type="text" class="form-control" placeholder="{{ $input_data['email'] }}" disabled="">
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input name="display_name" type="text" class="form-control" placeholder="16字以内">
+                                        <input name="display_name" type="text" class="form-control" placeholder="16字以内" value="{{ $input_data['display_name'] }}">
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                             </h2>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    @include('form/status',['prefix' => 'weekday_default_'])
+                                    @include('form/status',['prefix' => 'weekday_default_', 'value' => $input_data['weekday_default_status']])
                                 </div>
                             </div>
                             <h2 class="card-inside-title">
@@ -47,19 +47,20 @@
                             </h2>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    @include('form/status',['prefix' => 'holiday_default_'])
+                                    @include('form/status',['prefix' => 'holiday_default_', 'value' => $input_data['holiday_default_status']])
                                 </div>
                             </div>
                             <h2 class="card-inside-title">表示テキスト</h2>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <textarea name="description" rows="1" class="form-control no-resize auto-growth" placeholder="200字以内"></textarea>
+                                        <textarea name="description" rows="1" class="form-control no-resize auto-growth" placeholder="200字以内">{{ $input_data['description'] }}</textarea>
                                     </div>
                                 </div>
                             </div>
                             {{ csrf_field() }}
-                                <input type="hidden" name="email" value="{{ $email }}" >
+                                <input type="hidden" name="email" value="{{ $input_data['email'] }}" >
+                                <input type="hidden" name="encrypted" value="{{ $input_data['encrypted'] }}" >
                             <button class="btn btn-raised btn-primary waves-effect" type="submit">登録する</button>
                         </div>
                     </div>
