@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\UserSetting;
 
 class User extends Authenticatable
 {
@@ -27,6 +28,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setting()
+    {
+        return $this->hasOne('App\Models\UserSetting');
+    }
 
     public static function createByEmail($email)
     {
