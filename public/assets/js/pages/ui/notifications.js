@@ -1,3 +1,11 @@
+function showInfo(message)
+{
+    showNotification('alert-info', message, 'bottom', 'left', null, null);
+}
+
+function showError(message) {
+    showNotification('alert-danger', message, 'bottom', 'left', null, null);
+}
 
 function showNotification(colorName, text, placementFrom, placementAlign, animateEnter, animateExit) {
     if (colorName === null || colorName === '') { colorName = 'bg-black'; }

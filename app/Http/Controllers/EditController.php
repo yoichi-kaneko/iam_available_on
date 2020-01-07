@@ -35,6 +35,6 @@ class EditController extends Controller
         $post_data = $request->all();
         UserSetting::updateSetting(Auth::user()->id, $post_data);
 
-        return redirect('/calendar/' . Auth::user()->setting->user_code);
+        return redirect('/calendar/' . Auth::user()->setting->user_code)->with(['message' => 'ユーザ情報を更新しました']);
     }
 }

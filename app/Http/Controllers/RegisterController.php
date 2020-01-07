@@ -45,7 +45,7 @@ class RegisterController extends Controller
         $user = User::createByEmail($post_data['email']);
         $setting = UserSetting::createSetting($user->id, $post_data);
         \Auth::login($user, true);
-        return redirect('/calendar/' . $setting->user_code);
+        return redirect('/calendar/' . $setting->user_code)->with(['message' => '新規登録を行いました']);
     }
 
 }

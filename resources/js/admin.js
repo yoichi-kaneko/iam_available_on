@@ -39,7 +39,7 @@ $.AdminCC.options = {
 
 /* Left Sidebar - Function ===========
  *  You can manage the left sidebar menu options
- *  
+ *
  */
 $.AdminCC.leftSideBar = {
     activate: function() {
@@ -152,7 +152,7 @@ $.AdminCC.leftSideBar = {
 
 /* Right Sidebar - Function =========
  *  You can manage the right sidebar menu options
- *  
+ *
  */
 $.AdminCC.rightSideBar = {
     activate: function() {
@@ -190,7 +190,7 @@ $.AdminCC.rightSideBar = {
 
 /* Searchbar - Function ==========
  *  You can manage the search bar
- *  
+ *
  */
 var $searchBar = $('.search-bar');
 $.AdminCC.search = {
@@ -227,7 +227,7 @@ $.AdminCC.search = {
 
 /* Navbar - Function ===========
  *  You can manage the navbar
- *  
+ *
  */
 $.AdminCC.navbar = {
     activate: function() {
@@ -261,7 +261,7 @@ $.AdminCC.navbar = {
 
 /* Input - Function ==================
  *  You can manage the inputs(also textareas) with name of class 'form-control'
- *  
+ *
  */
 $.AdminCC.input = {
     activate: function() {
@@ -292,7 +292,7 @@ $.AdminCC.input = {
 
 /* Form - Select - Function =========
  *  You can manage the 'select' of form elements
- *  
+ *
  */
 $.AdminCC.select = {
     activate: function() {
@@ -305,7 +305,7 @@ $.AdminCC.select = {
 
 /* Browser - Function =========
  *  You can manage browser
- *  
+ *
  */
 var edge = 'Microsoft Edge';
 var ie10 = 'Internet Explorer 10';
@@ -377,7 +377,11 @@ $(function() {
     $.AdminCC.search.activate();
 
     setTimeout(function() {
-        $('.page-loader-wrapper').fadeOut();
+        $('.page-loader-wrapper').fadeOut('normal', function () {
+            if ($('input[name="message"]').length) {
+                showInfo($('input[name="message"]').first().val());
+            }
+        });
     }, 50);
 });
 

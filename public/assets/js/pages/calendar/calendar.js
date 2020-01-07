@@ -94,7 +94,7 @@ function bindCalendarEvents()
             url: '/api/calendar/' + USER_CODE,
             format: 'json',
             success: function (returned_data) {
-                showNotification('alert-info', 'スケジュールが更新されました', 'bottom', 'left', null, null);
+                showInfo('スケジュールが更新されました');
                 // TODO: この書き方でイベント更新できるので、これをちゃんと整備する
                 //let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
                 //    console.log(evt, evt.id);
@@ -105,7 +105,7 @@ function bindCalendarEvents()
                 //console.log(event);
             },
             error: function (returned_data) {
-                showNotification('alert-danger', '更新に失敗しました', 'bottom', 'left', null, null);
+                showError('更新に失敗しました');
             },
             complete: function (returned_data) {
                 $('#modal_button').click();
