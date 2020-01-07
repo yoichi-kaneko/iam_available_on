@@ -48,6 +48,17 @@ class UserSetting extends Model
         return self::create($data);
     }
 
+    public static function updateSetting($user_id, $settings)
+    {
+        $setting = self::where('user_id', $user_id)->first();
+        $setting->display_name = $settings['display_name'];
+        $setting->weekday_default_status = $settings['weekday_default_status'];
+        $setting->holiday_default_status = $settings['holiday_default_status'];
+        $setting->description = $settings['description'];
+        return $setting->save();
+    }
+
+
     private static function makeUniqueUserCode()
     {
         while (empty($ret)) {

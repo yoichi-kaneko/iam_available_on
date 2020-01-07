@@ -16,6 +16,7 @@ Route::get('/', 'IndexController@index');
 Route::get('/calendar/me', 'CalendarController@me');
 Route::get('/calendar/{user_code}', 'CalendarController@show');
 Route::get('/edit', 'EditController@index');
+Route::post('/edit', 'EditController@post');
 
 Route::get('/register', 'RegisterController@index');
 Route::post('/register', 'RegisterController@post');
