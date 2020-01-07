@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "analytics": "^0.3.0",
+        "animate.css": "^3.7.2",
         "autosize": "^4.0.2",
         "bootstrap": "^4.4.1",
         "bootstrap-notify": "^3.1.3",
