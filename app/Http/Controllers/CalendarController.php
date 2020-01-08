@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserSetting;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -12,6 +13,10 @@ class CalendarController extends Controller
 {
     public function show($user_code)
     {
+        $user_setting = UserSetting::where('user_code', $user_code)->first();
+        if (empty($user_setting)) {
+            abort(404);
+        }
         return view('calendar/show')->with(
             [
                 'user_code' => $user_code
