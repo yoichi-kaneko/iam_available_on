@@ -8,18 +8,19 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Queries\UserInfoQuery;
 
 class CalendarController extends Controller
 {
     public function show($user_code)
     {
-        $user_setting = UserSetting::where('user_code', $user_code)->first();
-        if (empty($user_setting)) {
+        $user_info = UserInfoQuery::fetch($user_code);
+        if (empty($user_info)) {
             abort(404);
         }
         return view('calendar/show')->with(
             [
-                'user_code' => $user_code
+                'user_info' => $user_info
             ]
         );
     }

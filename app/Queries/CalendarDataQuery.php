@@ -29,7 +29,7 @@ class CalendarDataQuery
      */
     private static function getDateRange()
     {
-        $start = date('Y-m-d');
+        $start = date('Y-m-01');
         $end = date('Y-m-d', mktime(0, 0, 0, date('m') + 2, 0, date('Y')));
         return ['start' => $start, 'end' => $end];
     }
@@ -55,7 +55,7 @@ class CalendarDataQuery
 
         // TODO: まずはDB接続を行わずにデータ生成を書き出す。DBからの取得は別途作成する。
 
-        $current_day = $date_range['start'];
+        $current_day = date('Y-m-d');
 
         $id = 1;
 

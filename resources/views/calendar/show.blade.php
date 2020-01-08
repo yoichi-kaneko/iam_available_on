@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@if (!empty($user_info['is_owner']))
+    @section('use_ajax_post', true)
+@endif
+
 @section('content')
     <section class="content page-calendar">
         <div class="container-fluid">
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-12 col-md-6 col-sm-7">
-                        <h2>Calendar</h2>
+                        <h2>{{ $user_info['display_name'] }}さんのカレンダー</h2>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Extra</a></li>
@@ -16,6 +20,17 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-9 col-md-12">
+                    <div class="card">
+                        <div class="body">
+                            <button class="btn btn-raised btn-success" id="change-view-today">today</button>
+                            <button class="btn btn-raised btn-default" id="change-view-day" >Day</button>
+                            <button class="btn btn-raised btn-default" id="change-view-week">Week</button>
+                            <button class="btn btn-raised btn-default" id="change-view-month">Month</button>
+                            <div id="calendar"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-3 col-md-12">
                     <div class="card">
                         <div class="body">
@@ -30,17 +45,6 @@
                             <div class="event-name b-success">The Custom Event #8<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
                             <div class="event-name b-success">The Custom Event #9 <a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
                             <div class="event-name b-primary">The Custom Event #10<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <div class="card">
-                        <div class="body">
-                            <button class="btn btn-raised btn-success" id="change-view-today">today</button>
-                            <button class="btn btn-raised btn-default" id="change-view-day" >Day</button>
-                            <button class="btn btn-raised btn-default" id="change-view-week">Week</button>
-                            <button class="btn btn-raised btn-default" id="change-view-month">Month</button>
-                            <div id="calendar"></div>
                         </div>
                     </div>
                 </div>
@@ -83,7 +87,7 @@
     </div>
 
     <script>
-        const USER_CODE = '{{ $user_code }}';
+        const USER_CODE = '{{ $user_info['user_code'] }}';
     </script>
 @endsection
 
