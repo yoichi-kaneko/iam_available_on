@@ -7,6 +7,35 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
+/**
+ * App\Models\UserSetting
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $user_code ユーザーコード
+ * @property string $display_name 表示名
+ * @property int $weekday_default_status 平日のデフォルトステータス
+ * @property int $holiday_default_status 休日のデフォルトステータス
+ * @property string|null $description 説明文
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereDisplayName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereHolidayDefaultStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereUserCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserSetting whereWeekdayDefaultStatus($value)
+ * @mixin \Eloquent
+ */
 class UserSetting extends Model
 {
     protected $fillable = [
