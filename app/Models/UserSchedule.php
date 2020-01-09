@@ -36,4 +36,18 @@ class UserSchedule extends Model
         'status',
         'comment',
     ];
+
+     public static function getStatusList()
+     {
+         return [1, 2, 3];
+     }
+
+     public static function updateSchedule($data)
+     {
+        $schedule = self::find($data['id']);
+        $schedule->comment = $data['comment'];
+        $schedule->status = $data['status'];
+        $schedule->save();
+        return $schedule;
+     }
 }

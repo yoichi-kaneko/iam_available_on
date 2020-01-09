@@ -55,7 +55,7 @@ function parseCalendarEvents(schedules)
                 title: makeText(val.status, val.comment),
                 start: val.date,
                 date: val.date,
-                className: 'b-l b-2x ' + colorClass,
+                className: ['b-l', 'b-2x', colorClass],
             }
         )
     });
@@ -89,20 +89,32 @@ function bindCalendarEvents()
 
     $('#save_schedule').click(function(){
         $('#schedule_loader').show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $.ajax({
-            type: 'GET',
-            url: '/api/calendar/' + USER_CODE,
+            type: 'POST',
+            url: '/api/calendar/schedule',
             format: 'json',
+            data: {
+              id: $('#schedule_id').val(),
+              status: $("input[name='schedule_status']:checked").val(),
+              comment:  $('#schedule_comment').val()
+            },
             success: function (returned_data) {
                 showInfo('スケジュールが更新されました');
                 // TODO: この書き方でイベント更新できるので、これをちゃんと整備する
-                //let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
-                //    console.log(evt, evt.id);
-                //    return evt.id == 23;
-                //});
-                //event[0].title = 'XXX';
-                //$('#calendar').fullCalendar('updateEvent', event[0]);
-                //console.log(event);
+                let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
+                   return evt.id == returned_data.id;
+                });
+                event[0].status = returned_data.status;
+                event[0].comment = returned_data.comment;
+                event[0].title = makeText(returned_data.status, returned_data.comment);
+                let colorClass = SCHEDULE_STATUS[returned_data.status].className;
+                event[0].className = ['b-l', 'b-2x', colorClass];
+                $('#calendar').fullCalendar('updateEvent', event[0]);
             },
             error: function (returned_data) {
                 showError('更新に失敗しました');

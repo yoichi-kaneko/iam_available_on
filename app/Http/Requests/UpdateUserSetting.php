@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\UserSchedule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -26,8 +27,8 @@ class UpdateUserSetting extends FormRequest
     {
         return [
             'display_name' => 'required|max:16',
-            'weekday_default_status' => ['required', Rule::in([1, 2, 3])],
-            'holiday_default_status' => ['required', Rule::in([1, 2, 3])],
+            'weekday_default_status' => ['required', Rule::in(UserSchedule::getStatusList())],
+            'holiday_default_status' => ['required', Rule::in(UserSchedule::getStatusList())],
             'description' => 'max:128',
         ];
     }

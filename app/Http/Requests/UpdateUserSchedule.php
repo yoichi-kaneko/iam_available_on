@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\UserSchedule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -24,6 +25,9 @@ class UpdateUserSchedule extends FormRequest
      */
     public function rules()
     {
-
+        return [
+            'status' => ['required', Rule::in(UserSchedule::getStatusList())],
+            'comment' => 'max:16',
+        ];
     }
 }
