@@ -29,7 +29,7 @@ class HolidayQuery
         // 対象の祝日リストから、対象期間の日付のみを対象にする。
         foreach ($all_holiday_list as $holiday) {
             if(strtotime($holiday) >= strtotime($start) && strtotime($holiday) <= strtotime($end)) {
-                $holiday_list[] = $holiday;
+                $holiday_list[] = date('Y-m-d', strtotime($holiday));
             }
         }
         return $holiday_list;

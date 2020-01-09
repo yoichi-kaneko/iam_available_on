@@ -16,10 +16,10 @@ class CalendarController extends Controller
 {
     public function show($user_code)
     {
-        $user_setting = UserSetting::where('user_code', $user_code)->first();
-        if (empty($user_setting)) {
+        $data = CalendarDataQuery::fetch($user_code);
+        if (empty($data)) {
             abort(404);
         }
-        return CalendarDataQuery::fetch($user_code);
+        return $data;
     }
 }

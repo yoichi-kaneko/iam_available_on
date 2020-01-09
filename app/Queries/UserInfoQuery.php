@@ -20,6 +20,7 @@ class UserInfoQuery
         return [
             'display_name' => $user_setting->display_name,
             'user_code' => $user_setting->user_code,
+            'description' => $user_setting->description,
             'is_owner' => self::checkIsOwner($user_setting->user_id)
         ];
     }

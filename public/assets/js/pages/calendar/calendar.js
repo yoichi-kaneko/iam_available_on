@@ -50,9 +50,9 @@ function parseCalendarEvents(schedules)
         event_data.push(
             {
                 id: val.id,
-                comment: val.description,
+                comment: val.comment,
                 status: val.status,
-                title: mark + ' ' + val.description,
+                title: makeText(val.status, val.comment),
                 start: val.date,
                 date: val.date,
                 className: 'b-l b-2x ' + colorClass,
@@ -154,6 +154,17 @@ function showModal(info)
     $('#schedule_status_' + info.status).prop('checked', true);
     $('#schedule_loader').hide();
     $('#modal_button').click();
+}
+
+function makeText(status, comment)
+{
+    let mark = SCHEDULE_STATUS[status].mark;
+    let ret = mark;
+    if (comment != null && comment != '') {
+        ret += ' ' + comment;
+    }
+
+    return ret;
 }
 
     /* initialize the external events
