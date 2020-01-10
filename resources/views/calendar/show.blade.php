@@ -33,18 +33,7 @@
                 </div>
                 <div class="col-lg-3 col-md-12">
                     <div class="card">
-                        <div class="body">
-                            <button type="button" class="btn btn-raised btn-primary btn-sm m-t-0" data-toggle="modal" href="#cal-new-event"> <i class="zmdi zmdi-plus"></i> Events</button>
-                            <div class="event-name b-greensea">The Custom Event #1<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-lightred">The Custom Event #2<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-amethyst">The Custom Event #3<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-amethyst">The Custom Event #4<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-success">The Custom Event #5 <a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-lightred">The Custom Event #6<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-greensea">The Custom Event #7<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-success">The Custom Event #8<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-success">The Custom Event #9 <a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
-                            <div class="event-name b-primary">The Custom Event #10<a class="text-muted event-remove"><i class="zmdi zmdi-delete"></i></a> </div>
+                        <div id="calendar_list" class="body">
                         </div>
                     </div>
                 </div>
@@ -86,6 +75,11 @@
         </div>
     </div>
 
+    <script id="event_list" type="text/x-jsrender">
+        <div class="event-name event_list @{{:event_class}}" id="schedule_@{{:id}}">
+          @{{:date}} @{{:text}}
+        </div>
+    </script>
     <script>
         const USER_CODE = '{{ $user_info['user_code'] }}';
     </script>

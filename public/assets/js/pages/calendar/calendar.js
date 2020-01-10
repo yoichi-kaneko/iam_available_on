@@ -39,6 +39,21 @@ function renderCalendar(returned_data)
             showModal(info);
         }
     });
+    // TODO: この処理をちゃんと整理する
+    $.each(events_data, function (id, val) {
+        let event_class =  SCHEDULE_STATUS[val.status].className;
+        let date = dateFormat(val.start, 'mm-dd');
+        let tmpl = $('#event_list').render({id: val.id, event_class: event_class, date: date, text: val.title});
+        $('#calendar_list').append(tmpl);
+        $('.event_list').click(function(){
+            let schedule_id = $(this).attr('id').replace('schedule_', '');
+            let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
+                return evt.id == schedule_id;
+            });
+
+            showModal(event[0]);
+        });
+    });
 }
 
 function parseCalendarEvents(schedules)
