@@ -77,5 +77,5 @@
 @endsection
 
 @section('js_file')
-    {{Html::script('assets/js/pages/calendar/calendar.js')}}
+    {{Html::script('js/pages/calendar.js')}}
 @endsection

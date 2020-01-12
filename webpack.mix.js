@@ -18,3 +18,5 @@ mix.sass('resources/sass/all-themes.scss', 'public/css')
 
 mix.js('resources/js/libs.js', 'public/js')
     .js('resources/js/app.js', 'public/js')
+    .js('resources/js/pages/calendar.js', 'public/js/pages');
+

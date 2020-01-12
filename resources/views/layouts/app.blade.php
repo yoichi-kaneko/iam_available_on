@@ -68,9 +68,8 @@
 
 <!-- Jquery Core Js -->
 
-{{Html::script('js/libs.js')}} <!-- Lib Scripts Plugin Js -->
 
-{{Html::script('assets/bundles/fullcalendarscripts.bundle.js')}} <!--/ calender javascripts -->
+{{Html::script('js/libs.js')}} <!-- Lib Scripts Plugin Js -->
 
 {{Html::script('js/app.js')}}<!-- Custom Js -->
 {{Html::script('assets/js/const.js')}}

@@ -9,3 +9,4 @@ require('node-waves');
 require('bootstrap-select');
 require('bootstrap-notify');
 require('jsrender');
+require('fullcalendar');

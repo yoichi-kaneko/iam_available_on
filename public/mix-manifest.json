@@ -4,5 +4,6 @@
     "/css/all-themes.css": "/css/all-themes.css",
     "/css/libs.css": "/css/libs.css",
     "/css/calendar.css": "/css/calendar.css",
-    "/css/main.css": "/css/main.css"
+    "/css/main.css": "/css/main.css",
+    "/js/pages/calendar.js": "/js/pages/calendar.js"
 }

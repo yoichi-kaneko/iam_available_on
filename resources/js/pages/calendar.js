@@ -20,6 +20,7 @@ function renderCalendar(returned_data)
             right: 'next'
         },
         locale: 'ja',
+        titleFormat: 'YYYY年M月',
         defaultDate: returned_data.date_range.start,
         validRange: {
             start: returned_data.date_range.start,
