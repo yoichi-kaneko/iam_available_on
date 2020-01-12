@@ -11,28 +11,19 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-6 col-sm-7">
                         <h2>{{ $user_info['display_name'] }}さんのカレンダー</h2>
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:void(0);">Extra</a></li>
-                            <li class="breadcrumb-item active">Calendar</li>
-                        </ul>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-9 col-md-12">
-                    <div class="card">
+                    <div class="card" id="calendar_card">
                         <div class="body">
-                            <button class="btn btn-raised btn-success" id="change-view-today">today</button>
-                            <button class="btn btn-raised btn-default" id="change-view-day" >Day</button>
-                            <button class="btn btn-raised btn-default" id="change-view-week">Week</button>
-                            <button class="btn btn-raised btn-default" id="change-view-month">Month</button>
                             <div id="calendar"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-12">
-                    <div class="card">
+                    <div class="card" id="calendar_list_card">
                         <div id="calendar_list" class="body">
                         </div>
                     </div>

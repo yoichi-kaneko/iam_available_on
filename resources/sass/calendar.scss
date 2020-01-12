@@ -48,3 +48,7 @@ html {
 .modal-open {
     padding-right: 0px !important;
 }
+
+#calendar_list {
+    overflow-y: scroll;
+}
