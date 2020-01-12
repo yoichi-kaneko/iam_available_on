@@ -12,11 +12,9 @@
     <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon"><!-- Favicon-->
 
 {{Html::style('css/libs.css')}}
-{{Html::style('assets/plugins/fullcalendar/fullcalendar.css')}}
 <!-- Custom Css -->
     {{Html::style('css/main.css')}}
     {{Html::style('css/all-themes.css')}}
-    {{Html::style('css/calendar.css')}}
 </head>
 <body class="theme-blue-grey">
 <!-- Page Loader -->

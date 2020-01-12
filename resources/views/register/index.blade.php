@@ -79,6 +79,5 @@
 @endsection
 
 @section('js_file')
-    {{Html::script('assets/plugins/autosize/autosize.js')}}
     {{Html::script('assets/js/form.js')}}
 @endsection
