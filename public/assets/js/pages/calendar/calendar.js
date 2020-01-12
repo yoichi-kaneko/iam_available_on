@@ -42,20 +42,8 @@ function renderCalendar(returned_data)
             $('#calendar_list').css('max-height', $('#calendar_card').height());
         }
     });
-    // TODO: この処理をちゃんと整理する
     $.each(events_data, function (id, val) {
-        let event_class =  SCHEDULE_STATUS[val.status].className;
-        let date = dateFormat(val.start, 'mm-dd');
-        let tmpl = $('#event_list').render({id: val.id, event_class: event_class, date: date, text: val.title});
-        $('#calendar_list').append(tmpl);
-        $('.event_list').click(function(){
-            let schedule_id = $(this).attr('id').replace('schedule_', '');
-            let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
-                return evt.id == schedule_id;
-            });
-
-            showModal(event[0]);
-        });
+        renderCalendarList(val);
     });
 }
 
@@ -111,17 +99,16 @@ function bindCalendarEvents()
               comment:  $('#schedule_comment').val()
             },
             success: function (returned_data) {
-                showInfo('スケジュールが更新されました');
-                // TODO: この書き方でイベント更新できるので、これをちゃんと整備する
-                let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
-                   return evt.id == returned_data.id;
-                });
-                event[0].status = returned_data.status;
-                event[0].comment = returned_data.comment;
-                event[0].title = makeText(returned_data.status, returned_data.comment);
+                let event = getEventInfo(returned_data.id);
+
+                event.status = returned_data.status;
+                event.comment = returned_data.comment;
+                event.title = makeText(returned_data.status, returned_data.comment);
                 let colorClass = SCHEDULE_STATUS[returned_data.status].className;
-                event[0].className = ['b-l', 'b-2x', colorClass];
-                $('#calendar').fullCalendar('updateEvent', event[0]);
+                event.className = ['b-l', 'b-2x', colorClass];
+                $('#calendar').fullCalendar('updateEvent', event);
+                renderCalendarList(event);
+                showInfo('スケジュールが更新されました');
             },
             error: function (returned_data) {
                 showError('更新に失敗しました');
@@ -184,4 +171,27 @@ function makeText(status, comment)
     }
 
     return ret;
+}
+
+function getEventInfo(schedule_id) {
+    let event = $('#calendar').fullCalendar('clientEvents', function(evt) {
+        return evt.id == schedule_id;
+    });
+    return event[0];
+}
+
+function renderCalendarList(event_data)
+{
+    let event_class =  SCHEDULE_STATUS[event_data.status].className;
+    let date = dateFormat(event_data.start, 'mm-dd');
+    let tmpl = $('#event_list').render({id: event_data.id, event_class: event_class, date: date, text: event_data.title});
+    if ($('#schedule_' + event_data.id).length) {
+        $('#schedule_' + event_data.id).replaceWith(tmpl);
+    } else {
+        $('#calendar_list').append(tmpl);
+    }
+    $('#schedule_' + event_data.id).click(function(){
+        let event = getEventInfo(event_data.id);
+        showModal(event);
+    });
 }
