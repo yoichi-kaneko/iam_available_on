@@ -23,7 +23,7 @@
                                     </div>
                                 @endforeach
                             @endif
-                            <form action="{{ action('EditController@post') }}" method="POST">
+                            <form id="user_form" action="{{ action('EditController@post') }}" method="POST">
                             <h2 class="card-inside-title">メールアドレス（変更不可）</h2>
                             <div class="col-sm-6">
                                 <div class="form-group">

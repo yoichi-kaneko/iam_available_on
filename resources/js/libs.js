@@ -9,5 +9,6 @@ require('jquery-slimscroll');
 require('node-waves');
 require('bootstrap-select');
 require('bootstrap-notify');
+require('jquery-validation');
 require('jsrender');
 require('fullcalendar');
