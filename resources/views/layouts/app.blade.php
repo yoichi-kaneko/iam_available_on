@@ -74,7 +74,6 @@
 
 {{Html::script('js/app.js')}}<!-- Custom Js -->
 {{Html::script('assets/js/const.js')}}
-{{Html::script('assets/js/pages/ui/notifications.js')}}
 @yield('js_file')
 @if (session('message'))
     <input type="hidden" name="message" value="{{ session('message') }}">

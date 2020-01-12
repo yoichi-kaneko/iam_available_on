@@ -1,13 +1,15 @@
-function showInfo(message)
+window.showInfo = function(message)
 {
     showNotification('alert-info', message, 'bottom', 'left', null, null);
 }
 
-function showError(message) {
+window.showError = function(message)
+{
     showNotification('alert-danger', message, 'bottom', 'left', null, null);
 }
 
-function showNotification(colorName, text, placementFrom, placementAlign, animateEnter, animateExit) {
+window.showNotification = function (colorName, text, placementFrom, placementAlign, animateEnter, animateExit)
+{
     if (colorName === null || colorName === '') { colorName = 'bg-black'; }
     if (text === null || text === '') { text = 'Turning standard Bootstrap alerts'; }
     if (animateEnter === null || animateEnter === '') { animateEnter = 'animated fadeInDown'; }

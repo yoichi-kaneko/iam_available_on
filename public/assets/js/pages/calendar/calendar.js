@@ -119,37 +119,6 @@ function bindCalendarEvents()
         });
 
     });
-
-    // Change to week view
-    $('#change-view-week').click(function(){
-        $('#calendar').fullCalendar( 'changeView', 'agendaWeek');
-
-        // safari fix
-        $('#content .main').fadeOut(0, function() {
-            setTimeout( function() {
-                $('#content .main').css({'display':'table'});
-            }, 0);
-        });
-
-    });
-
-    // Change to day view
-    $('#change-view-day').click(function(){
-        $('#calendar').fullCalendar( 'changeView','agendaDay');
-
-        // safari fix
-        $('#content .main').fadeOut(0, function() {
-            setTimeout( function() {
-                $('#content .main').css({'display':'table'});
-            }, 0);
-        });
-
-    });
-
-    // Change to today view
-    $('#change-view-today').click(function(){
-        $('#calendar').fullCalendar('today');
-    });
 }
 
 function showModal(info)
