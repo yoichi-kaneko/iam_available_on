@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/calendar/{user_code}', 'Api\CalendarController@show');
-Route::post('/calendar/schedule', 'Api\CalendarScheduleController@post');
+

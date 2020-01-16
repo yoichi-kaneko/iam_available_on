@@ -43,7 +43,7 @@
                     @include('form/status',['prefix' => 'schedule_'])
                     <div class="form-group">
                         <div class="form-line">
-                            <input id="schedule_comment" type="text" class="form-control" placeholder="16文字まで" />
+                            <input id="schedule_comment" name="schedule_comment" type="text" class="form-control" maxlength="16" placeholder="16文字まで" />
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,6 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Http\Controllers\Controller;
 use App\Queries\CalendarDataQuery;
-use Illuminate\Support\Facades\Auth;
 
 class CalendarController extends Controller
 {

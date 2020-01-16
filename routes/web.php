@@ -27,3 +27,5 @@ Route::get('logout', 'Auth\LogoutController@index');
 
 Route::get('/page/howto', 'PageController@howto');
 Route::get('/page/termsofservice', 'PageController@termsofservice');
+
+Route::post('/api/calendar/schedule', 'Api\CalendarScheduleController@post');

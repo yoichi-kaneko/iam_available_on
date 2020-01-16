@@ -1,5 +1,7 @@
 "use strict";
 
+let escape = require('escape-html');
+
 $.ajax({
     type: 'GET',
     url: '/api/calendar/' + USER_CODE,
@@ -154,7 +156,7 @@ function renderCalendarList(event_data)
 {
     let event_class =  SCHEDULE_STATUS[event_data.status].className;
     let date = dateFormat(event_data.start, 'mm-dd');
-    let tmpl = $('#event_list').render({id: event_data.id, event_class: event_class, date: date, text: event_data.title});
+    let tmpl = $('#event_list').render({id: event_data.id, event_class: event_class, date: date, text: escape(event_data.title)});
     if ($('#schedule_' + event_data.id).length) {
         $('#schedule_' + event_data.id).replaceWith(tmpl);
     } else {
