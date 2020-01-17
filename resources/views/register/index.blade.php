@@ -79,5 +79,5 @@
 @endsection
 
 @section('js_file')
-    {{Html::script('assets/js/form.js')}}
+    {{Html::script('js/pages/form.js')}}
 @endsection

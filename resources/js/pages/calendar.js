@@ -1,6 +1,7 @@
 "use strict";
 
 let escape = require('escape-html');
+require('../const/schedule_status');
 
 $.ajax({
     type: 'GET',

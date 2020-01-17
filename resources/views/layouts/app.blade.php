@@ -70,7 +70,6 @@
 {{Html::script('js/libs.js')}} <!-- Lib Scripts Plugin Js -->
 
 {{Html::script('js/app.js')}}<!-- Custom Js -->
-{{Html::script('assets/js/const.js')}}
 @yield('js_file')
 @if (session('message'))
     <input type="hidden" name="message" value="{{ session('message') }}">
