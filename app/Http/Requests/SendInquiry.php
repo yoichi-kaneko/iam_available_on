@@ -13,7 +13,7 @@ class SendInquiry extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class SendInquiry extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:64',
+            'mail' => 'required|max:64',
+            'text' => 'required|max:400',
         ];
     }
 }

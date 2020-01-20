@@ -37,4 +37,11 @@ class Inquiry extends Model
         'mail',
         'text',
     ];
+
+    public static function saveInquiry($data)
+    {
+        $model = self::firstOrNew($data);
+        $model->save();
+        return true;
+    }
 }
