@@ -22,6 +22,9 @@ Route::get('/register', 'RegisterController@index');
 Route::post('/register', 'RegisterController@post');
 Route::get('/withdraw', 'WithdrawController@index');
 Route::post('/withdraw', 'WithdrawController@post');
+Route::get('/inquiry', 'InquiryController@index');
+Route::post('/inquiry', 'InquiryController@post');
+
 Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 Route::get('logout', 'Auth\LogoutController@index');
