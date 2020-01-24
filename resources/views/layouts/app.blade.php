@@ -8,7 +8,7 @@
     @if (View::hasSection('use_ajax_post'))
         <meta name="csrf-token" content="{{ csrf_token() }}">
     @endif
-    <title>:: AdminCC - Bootstrap 4 Dashboard ::</title>
+    <title>@yield('page_title')::この日空いてます</title>
     <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon"><!-- Favicon-->
 
 {{Html::style('css/libs.css')}}
@@ -54,7 +54,7 @@
 <nav class="navbar">
     <div class="col-12">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ action('IndexController@index') }}">AdminCC</a>
+            <a class="navbar-brand" href="{{ action('IndexController@index') }}">この日空いてます</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ action('PageController@howto') }}" class="mega-menu" data-close="true"><i class="zmdi zmdi-help"></i></a></li>

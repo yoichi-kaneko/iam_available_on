@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page_title', '退会')
 
 @section('content')
     <section class="content page-index">

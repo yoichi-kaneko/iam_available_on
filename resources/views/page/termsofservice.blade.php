@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page_title', '利用規約')
 
 @section('content')
     <section class="content page-index">
