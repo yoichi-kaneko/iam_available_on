@@ -33,6 +33,7 @@ function renderCalendar(returned_data)
         droppable: false, // this allows things to be dropped onto the calendar
         eventLimit: true, // allow "more" link when too many events
         events: events_data,
+        height: 700,
         dayRender: function (date, cell) {
             let formatted_date = $.fullCalendar.formatDate(date,'YYYY-MM-DD');
             if(returned_data.holidays.indexOf(formatted_date) >= 0) {
