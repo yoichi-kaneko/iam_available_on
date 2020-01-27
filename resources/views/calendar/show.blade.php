@@ -11,7 +11,13 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-12 col-md-6 col-sm-7">
-                        <h2>{{ $user_info['display_name'] }}さんのカレンダー</h2>
+                        <h2>
+                            @if (!empty($user_info['is_owner']))
+                                {{ $user_info['display_name'] }}さん（あなた）のカレンダー
+                            @else
+                                {{ $user_info['display_name'] }}さんのカレンダー
+                            @endif
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -31,41 +37,15 @@
                 </div>
             </div>
         </div>
-        <button type="button" id="modal_button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#defaultModal" style="display: none;">MODAL</button>
-    </section>
 
-    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="modalLabel"><span id="schedule_date"></span></h4>
-                </div>
-                <div class="modal-body">
-                    @include('form/status',['prefix' => 'schedule_'])
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="schedule_comment" name="schedule_comment" type="text" class="form-control" maxlength="16" placeholder="16文字まで" />
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="preloader pl-size-xs" id="schedule_loader" style="display: none;">
-                        <div class="spinner-layer pl-grey">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <input name="schedule_id" id="schedule_id" type="hidden">
-                    <button id="save_schedule" type="button" class="btn btn-link waves-effect">SAVE</button>
-                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-                </div>
-            </div>
-        </div>
-    </div>
+            <button type="button" id="modal_button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#scheduleModal" style="display: none;">MODAL</button>
+
+    </section>
+    @if (!empty($user_info['is_owner']))
+        @include('modal/owner_schedule')
+    @else
+        @include('modal/user_schedule')
+    @endif
 
     <script id="event_list" type="text/x-jsrender">
         <div class="event-name event_list @{{:event_class}}" id="schedule_@{{:id}}">

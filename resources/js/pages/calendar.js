@@ -128,11 +128,21 @@ function bindCalendarEvents()
 
 function showModal(info)
 {
-    $('#schedule_id').val(info.id);
-    $('#schedule_date').html(info.date);
-    $('#schedule_comment').val(info.comment);
-    $('#schedule_status_' + info.status).prop('checked', true);
-    $('#schedule_loader').hide();
+    // #schedule_idがあればオーナーのModalと見なす
+    if ($('#schedule_id').length > 0) {
+        $('#schedule_id').val(info.id);
+        $('#schedule_date').html(info.date);
+        $('#schedule_comment').val(info.comment);
+        $('#schedule_status_' + info.status).prop('checked', true);
+        $('#schedule_loader').hide();
+        // そうでない場合、別のユーザのModalと見なす
+    } else {
+        $('#schedule_date').html(info.date);
+        $('#comment_body').removeClass();
+        $('#comment_body').addClass('event-name event_list ' + SCHEDULE_STATUS[info.status].className);
+        $('#schedule_comment').html(makeText(info.status, info.comment));
+    }
+
     $('#modal_button').click();
 }
 
