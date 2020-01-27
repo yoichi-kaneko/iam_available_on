@@ -22,6 +22,13 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                    <div class="m-b-20 card">
+                        <div class="body">
+                            <p>{!! nl2br(e($user_info['description'])) !!}</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-9 col-md-12">
                     <div class="card" id="calendar_card">
                         <div class="body">
