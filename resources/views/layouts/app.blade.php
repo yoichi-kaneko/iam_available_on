@@ -9,6 +9,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     @endif
     <title>@yield('page_title')::この日空いてます</title>
+    <meta property="og:title" content="@yield('page_title')::この日空いてます">
+    <meta property="og:description" content="description" />
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="この日空いてます">
+    <meta property="og:locale" content="ja_JP">
     <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon"><!-- Favicon-->
 
 {{Html::style('css/libs.css')}}
