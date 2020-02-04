@@ -16,6 +16,11 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="body">
+                            <p>
+                                ユーザー登録した方は<a href="{{ action('PageController@termsofservice') }}" target="_blank">利用規約</a>に合意したものとします。
+                            </p>
+                        </div>
+                        <div class="body">
                             @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="alert bg-pink alert-dismissible" role="alert">
