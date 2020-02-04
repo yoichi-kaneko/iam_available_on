@@ -80,5 +80,5 @@
 @endsection
 
 @section('js_file')
-    {{Html::script('js/pages/form.js')}}
+    <script src="{{ mix('js/pages/form.js') }}"></script>
 @endsection

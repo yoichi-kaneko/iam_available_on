@@ -66,5 +66,5 @@
 @endsection
 
 @section('js_file')
-    {{Html::script('js/pages/calendar.js')}}
+    <script src="{{ mix('js/pages/calendar.js') }}"></script>
 @endsection

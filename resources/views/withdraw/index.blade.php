@@ -39,7 +39,3 @@
         </div>
     </section>
 @endsection
-
-@section('js_file')
-    {{Html::script('assets/js/form.js')}}
-@endsection

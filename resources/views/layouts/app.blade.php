@@ -68,10 +68,9 @@
 
 <!-- Jquery Core Js -->
 
+<script src="{{ mix('js/libs.js') }}"></script><!-- Lib Scripts Plugin Js -->
+<script src="{{ mix('js/app.js') }}"></script><!-- Custom Js -->
 
-{{Html::script('js/libs.js')}} <!-- Lib Scripts Plugin Js -->
-
-{{Html::script('js/app.js')}}<!-- Custom Js -->
 @yield('js_file')
 @if (session('message'))
     <input type="hidden" name="message" value="{{ session('message') }}">
