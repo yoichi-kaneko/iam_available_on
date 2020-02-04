@@ -19,6 +19,12 @@
                                 {{ $user_info['display_name'] }}さんのカレンダー
                             @endif
                         </h2>
+                        @if (!empty($user_info['is_owner']))
+                            <p>
+                                <div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" data-url="{{ url()->current() }}" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
+                                <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                            </p>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -27,6 +33,7 @@
                     <div class="m-b-20 card">
                         <div class="body">
                             <p>{!! nl2br(e($user_info['description'])) !!}</p>
+
                         </div>
                     </div>
                 </div>
