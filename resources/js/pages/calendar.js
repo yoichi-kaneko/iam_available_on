@@ -45,6 +45,7 @@ function renderCalendar(returned_data)
         },
         eventAfterAllRender: function (info) {
             $('#calendar_list').css('max-height', $('#calendar_card').height());
+            fadeOutLoader();
         }
     });
     $.each(events_data, function (id, val) {

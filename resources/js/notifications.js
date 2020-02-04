@@ -44,3 +44,9 @@ window.showNotification = function (colorName, text, placementFrom, placementAli
             '</div>'
         });
 }
+
+window.showFlashMessage = function () {
+    if ($('input[name="message"]').length) {
+        showInfo($('input[name="message"]').first().val());
+    }
+}

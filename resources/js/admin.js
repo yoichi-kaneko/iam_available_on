@@ -376,13 +376,14 @@ $(function() {
     $.AdminCC.select.activate();
     $.AdminCC.search.activate();
 
-    setTimeout(function() {
-        $('.page-loader-wrapper').fadeOut('normal', function () {
-            if ($('input[name="message"]').length) {
-                showInfo($('input[name="message"]').first().val());
-            }
-        });
-    }, 50);
+    if ($('.page-loader-wrapper').length == 0) {
+        showFlashMessage();
+    };
 });
 
-//=======
+window.fadeOutLoader = function()
+{
+    $('.page-loader-wrapper').fadeOut('normal', function () {
+        showFlashMessage();
+    });
+}

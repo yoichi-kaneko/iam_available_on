@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('page_title', $user_info['display_name'] . 'さんのカレンダー')
+@section('use_page_loader', true)
 
 @if (!empty($user_info['is_owner']))
     @section('use_ajax_post', true)

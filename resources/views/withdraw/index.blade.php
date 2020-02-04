@@ -30,7 +30,8 @@
                                     <label for="agree_withdraw">退会に合意する</label>
                                 </div>
                                 {{ csrf_field() }}
-                                <button class="btn btn-raised btn-primary waves-effect" type="submit">退会する</button>
+                                <button class="btn btn-raised btn-black waves-effect" type="submit">退会する</button>
+                            </form>
                         </div>
                     </div>
                 </div>
