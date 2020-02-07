@@ -38,10 +38,18 @@ class Inquiry extends Model
         'text',
     ];
 
+    public static function getDefaultValue()
+    {
+        return [
+            'name' => '',
+            'mail' => '',
+            'text' => '',
+        ];
+    }
+
     public static function saveInquiry($data)
     {
-        $model = self::firstOrNew($data);
-        $model->save();
+        $model = self::create($data);
         return true;
     }
 }

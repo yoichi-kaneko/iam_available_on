@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SendInquiry;
 
 use App\Models\Inquiry;
-use App\Services\Line;
-use App\Services\Message;
+use App\Notifications\InquiryNotification;
 use Illuminate\Http\Request;
 
 class InquiryController extends Controller
@@ -15,7 +14,7 @@ class InquiryController extends Controller
     {
         $old_input = $request->session()->get('_old_input');
         if (empty($old_input)) {
-            $input_data = $setting->toArray();
+            $input_data = Inquiry::getDefaultValue();
         } else {
             $input_data = $old_input;
         }
@@ -26,10 +25,10 @@ class InquiryController extends Controller
     public function post(SendInquiry $request)
     {
         $post_data = $request->all();
+        InquiryNotification::send($post_data);
         Inquiry::saveInquiry($post_data);
-        $message = Message::fetch('inquiry', $post_data);
-        Line::notify($message);
 
         return redirect('/')->with(['message' => '問い合わせを送信しました']);
     }
+
 }

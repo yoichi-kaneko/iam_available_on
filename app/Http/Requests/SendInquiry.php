@@ -25,8 +25,21 @@ class SendInquiry extends FormRequest
     {
         return [
             'name' => 'required|max:64',
-            'mail' => 'required|max:64',
+            'mail' => 'required|email|max:64',
             'text' => 'required|max:400',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => '名前は必須です',
+            'name.max'  => '名前は64文字までです',
+            'mail.required' => 'メールアドレスは必須です',
+            'mail.email' => 'メールアドレスの形式が正しくありません',
+            'mail.max' => 'メールアドレスは64文字までです',
+            'text.required' => '本文は必須です',
+            'text.max'  => '本文は400文字までです',
         ];
     }
 }
