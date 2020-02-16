@@ -7,7 +7,7 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-12 col-md-6 col-sm-7">
-                        <h2>Howto</h2>
+                        <h2>このサービスについて</h2>
                     </div>
                 </div>
             </div>
