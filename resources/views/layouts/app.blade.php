@@ -14,7 +14,14 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="この日空いてます">
     <meta property="og:locale" content="ja_JP">
-    <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon"><!-- Favicon-->
+    @if (View::hasSection('page_noindex'))
+        <meta name="robots" content="noindex, nofollow">
+    @else
+
+        <meta name="robots" content="index, follow">
+    @endif
+    <link rel="apple-touch-icon" type="image/png" href="{{ asset('/images/apple-touch-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/images/icon-192x192.png') }}">
 
 {{Html::style('css/libs.css')}}
 <!-- Custom Css -->
