@@ -22,6 +22,8 @@ mix.js('resources/js/libs.js', 'public/js')
     .js('resources/js/pages/form.js', 'public/js/pages')
     .js('resources/js/pages/inquiry.js', 'public/js/pages');
 
+mix.copyDirectory('resources/assets/images', 'public/images');
+
 if (mix.inProduction()) {
     mix.version();
 }

@@ -48,5 +48,6 @@ window.showNotification = function (colorName, text, placementFrom, placementAli
 window.showFlashMessage = function () {
     if ($('input[name="message"]').length) {
         showInfo($('input[name="message"]').first().val());
+        $('input[name="message"]').remove();
     }
 }
