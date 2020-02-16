@@ -46,7 +46,12 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="body">
-                            <p><a href="{{ action('PageController@termsofservice') }}">利用規約はこちら</a></p>
+                            <p>
+                                <a href="{{ action('PageController@termsofservice') }}">利用規約はこちら</a>
+                            </p>
+                            <p>
+                                <a href="{{ action('InquiryController@index') }}">問い合せはこちら</a>
+                            </p>
                         </div>
                     </div>
                 </div>
