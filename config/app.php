@@ -232,4 +232,5 @@ return [
         'AWS' => Aws\Laravel\AwsFacade::class,
     ],
 
+    'gtag_tracking_name' => env('GTAG_TRACKING_ID', null),
 ];

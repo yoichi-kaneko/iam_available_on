@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +16,6 @@
     @if (View::hasSection('page_noindex'))
         <meta name="robots" content="noindex, nofollow">
     @else
-
         <meta name="robots" content="index, follow">
     @endif
     <link rel="apple-touch-icon" type="image/png" href="{{ asset('/images/apple-touch-icon-180x180.png') }}">
@@ -27,6 +25,17 @@
 <!-- Custom Css -->
     {{Html::style('css/main.css')}}
     {{Html::style('css/all-themes.css')}}
+
+    @if (Config::get('app.gtag_tracking_name'))
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{Config::get('app.gtag_tracking_name')}}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{Config::get('app.gtag_tracking_name')}}');
+        </script>
+    @endif
+
 </head>
 <body class="theme-blue-grey">
 @if (View::hasSection('use_page_loader'))
