@@ -17,6 +17,7 @@
         "laravel/framework": "^7.0",
         "laravel/socialite": "5.*",
         "laravel/tinker": "^2.0",
+        "laravel/ui": "2.5.0",
         "laravelcollective/html": "^6.0",
         "linecorp/line-bot-sdk": "^4.1",
         "webpatser/laravel-uuid": "4.*"
