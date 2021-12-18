@@ -10,12 +10,14 @@
     "devDependencies": {
         "axios": "^0.21.1",
         "cross-env": "^7.0.3",
-        "laravel-mix": "^5.0.9",
+        "laravel-mix": "^6.0.39",
         "lodash": "^4.17.21",
+        "postcss": "^8.4.5",
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.30.0",
-        "sass-loader": "^8.0.2",
-        "vue-template-compiler": "^2.6.12"
+        "sass-loader": "^12.4.0",
+        "vue-template-compiler": "^2.6.12",
+        "webpack": "^5.65.0"
     },
     "dependencies": {
         "analytics": "^0.5.5",
@@ -36,7 +38,6 @@
         "moment": "^2.29.1",
         "node-waves": "^0.7.6",
         "popper.js": "^1.16.1",
-        "postcss": "^8.3.0",
         "url-parse": "^1.5.1"
     }
 }
